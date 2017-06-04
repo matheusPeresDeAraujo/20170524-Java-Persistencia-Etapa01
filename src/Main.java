@@ -1,0 +1,57 @@
+
+
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+//		EntityManager em = Persistence.createEntityManagerFactory("20170524_unit").createEntityManager();
+//		em.getTransaction().begin();
+////		Inserção simples de um registro de PROJETO
+//		Projeto projeto = new Projeto();
+//		projeto.setNome("Projeto 1");
+//		projeto.setNumero(100);
+//		projeto.setOrcamento(100.0001f);
+//		projeto.setDuracao(100);
+//		projeto.setInicio(new Date());
+//		em.persist(projeto);
+//		em.flush();
+//
+//		em.getTransaction().commit();
+//		em.close();
+		
+		
+		EntityManager em2 = Persistence.createEntityManagerFactory("20170524_unit").createEntityManager();	
+//		Busca do registro inserido
+		TypedQuery<Projeto> query2 = em2.createQuery("select p from Projeto p where p.numero = 100", Projeto.class);
+		List<Projeto> projetos = query2.getResultList();
+		System.out.println(projetos);
+		em2.close();
+		
+//		EntityManager em3 = Persistence.createEntityManagerFactory("20170524_unit").createEntityManager();	
+////		Busca do registro inserido e alterando valor
+//		em3.getTransaction().begin();
+//		TypedQuery<Projeto> query3 = em3.createQuery("select p from Projeto p ", Projeto.class);
+//		List<Projeto> projetos3 = query3.getResultList();
+//		Projeto projeto = projetos.get(0);
+//		projeto.setNome("NomeAlterado");
+//		em3.merge(projeto);
+//		em3.getTransaction().commit();
+//		em3.close();
+		
+//		EntityManager em4 = Persistence.createEntityManagerFactory("20170524_unit").createEntityManager();	
+////		Busca do registro e deletado este
+//		em4.getTransaction().begin();
+//		TypedQuery<Projeto> query4 = em4.createQuery("select p from Projeto p ", Projeto.class);
+//		List<Projeto> projetos4 = query4.getResultList();
+//		em4.remove(projetos4.get(0));
+//		em4.getTransaction().commit();
+//		em4.close();
+	}
+
+}
